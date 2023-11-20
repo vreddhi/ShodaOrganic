@@ -33,14 +33,14 @@ jobs:
       with:
         repository: DSTRLY/WebsiteFrontend
         token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-        ref: ${{ github.event.inputs.branch }}
+        ref: ${{ github.event.inputs.WebsiteFrontend_branch }}
 
     - name: Checkout Reader Code
       uses: actions/checkout@v4
       with:
         repository: DSTRLY/Reader
         token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-        ref: ${{ github.event.inputs.branch }}
+        ref: ${{ github.event.inputs.Reader_branch }}
         path: ./src/modules/reader
 
     - name: Configure AWS Credentials
